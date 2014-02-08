@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTimer: 10
+  mySkin: {fileID: 0}
 --- !u!1 &1510494060
 GameObject:
   m_ObjectHideFlags: 0
