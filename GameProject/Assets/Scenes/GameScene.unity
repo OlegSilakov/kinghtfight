@@ -849,6 +849,7 @@ GameObject:
   - 61: {fileID: 1041100335}
   - 114: {fileID: 1041100336}
   - 114: {fileID: 1041100337}
+  - 95: {fileID: 1041100338}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -907,6 +908,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5f4a95cc9f74df1a617f0cdecd2585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1041100338
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041100333}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed08b022d37bfea49acb48aafc2fdf43, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1 &1072360554
 GameObject:
   m_ObjectHideFlags: 0
