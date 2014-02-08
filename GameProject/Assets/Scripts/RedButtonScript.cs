@@ -15,7 +15,6 @@ public class RedButtonScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Time.timeScale = 0;
 		offence = enemy.GetComponent<Offence> ();
 		defence = player.GetComponent<Defence> ();
 	}
@@ -33,7 +32,7 @@ public class RedButtonScript : MonoBehaviour {
 		if (defence.selectedBodyPart && offence.selectedBodyPart) {
 			if (GUI.Button(new Rect (Screen.width / 2 - 40, Screen.height / 2 - 40, 80, 80), redButton)) {
 				fightButtonEnabled = false;
-				Time.timeScale = 1;
+				GameObject.Find("God").GetComponent<God>().Fight();
 			}
 		}
 	}
