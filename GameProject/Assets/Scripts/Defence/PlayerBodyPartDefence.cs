@@ -18,15 +18,6 @@ public class PlayerBodyPartDefence : MonoBehaviour {
 		GameObject player = GameObject.Find("Player");
 		Defence defence = player.GetComponent("Defence") as Defence;
 
-		GameObject selectedBodyPart = defence.selectedBodyPart;
-		if (selectedBodyPart) {
-			SpriteRenderer selectedRender = selectedBodyPart.GetComponent ("SpriteRenderer") as SpriteRenderer;
-			selectedRender.color = Color.white;
-		}
-
 		defence.selectedBodyPart = this.gameObject;
-
-		SpriteRenderer render = this.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
-		render.color = Color.green;
 	}
 }

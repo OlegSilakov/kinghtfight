@@ -6,8 +6,14 @@ public class Defence : MonoBehaviour {
 	private GameObject _selectedBodyPart;
 	public GameObject selectedBodyPart {
 		set {
-			Debug.Log("triam");
+			if (_selectedBodyPart) {
+				SpriteRenderer selectedRender = _selectedBodyPart.GetComponent("SpriteRenderer") as SpriteRenderer;
+				selectedRender.color = Color.white;
+			}
 			this._selectedBodyPart = value;
+
+			SpriteRenderer render = this._selectedBodyPart.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
+			render.color = Color.green;
 		}
 		get {
 			return this._selectedBodyPart;
