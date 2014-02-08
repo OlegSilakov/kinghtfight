@@ -29,9 +29,6 @@ public class God : MonoBehaviour {
 			else {
 				player.GetComponent<Animator>().SetTrigger("Attack");
 				enemy.GetComponent<Animator>().SetTrigger("Attack");
-
-				player.GetComponent<Animator>().ResetTrigger("Walk");
-				enemy.GetComponent<Animator>().ResetTrigger("Walk");
 			}
 		}
 	}
@@ -46,11 +43,43 @@ public class God : MonoBehaviour {
 	}
 
 	private string getAttackPartOfBody(){
-		return "legs";
+		string attackPartOfBody = "";
+
+		GameObject selected = player.GetComponent<Defence> ().selectedBodyPart;
+		if (selected.name == "Head") {
+			attackPartOfBody = "head";
+		}
+		else if (selected.name == "Body"){
+			attackPartOfBody = "body";
+		}
+		else if (selected.name == "Legs"){
+			attackPartOfBody = "legs";
+		}
+		else if ((selected.name == "Hand_left") || (selected.name == "Hand_right")) {
+			attackPartOfBody = "hands";
+		}
+
+		return attackPartOfBody;
 	}
 	
 	private string getDefencePartOfBody(){
-		return "head";
+		string attackPartOfBody = "";
+		
+		GameObject selected = enemy.GetComponent<Offence>().selectedBodyPart;
+		if (selected.name == "Head") {
+			attackPartOfBody = "head";
+		}
+		else if (selected.name == "Body"){
+			attackPartOfBody = "body";
+		}
+		else if (selected.name == "Legs"){
+			attackPartOfBody = "legs";
+		}
+		else if ((selected.name == "Hand_left") || (selected.name == "Hand_right")) {
+			attackPartOfBody = "hands";
+		}
+		
+		return attackPartOfBody;
 	}
 
 	private void startFightAnimation(){
