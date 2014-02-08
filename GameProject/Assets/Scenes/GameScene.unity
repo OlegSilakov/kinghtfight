@@ -2080,7 +2080,6 @@ GameObject:
   - 4: {fileID: 1444037470}
   - 212: {fileID: 1444037469}
   - 114: {fileID: 1444037468}
-  - 58: {fileID: 1444037471}
   m_Layer: 0
   m_Name: RedButton
   m_TagString: Untagged
@@ -2099,13 +2098,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3cb6c1c1e02a59429156633aa5edfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1845013966}
+  enemy: {fileID: 1041100333}
+  redButton: {fileID: 2800000, guid: 5489a261ffec5fb4a82f8c4661b7e334, type: 3}
+  mySkin: {fileID: 11400000, guid: 293d215f2f7daa54885828863da50e21, type: 2}
 --- !u!212 &1444037469
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444037467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -2133,17 +2136,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!58 &1444037471
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1444037467}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Radius: 1.08000004
-  m_Center: {x: 0, y: 0}
 --- !u!1 &1483726288
 GameObject:
   m_ObjectHideFlags: 0
