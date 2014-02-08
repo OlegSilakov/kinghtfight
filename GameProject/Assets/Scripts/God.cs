@@ -6,7 +6,8 @@ public class God : MonoBehaviour {
 	private VirtualEnemy virtualEnemy;
 	private bool walkToFight;
 	private bool endGame;
-
+	private bool walkToInitialPosition;
+	private float initialDistance;
 	private GameObject player;
 	private GameObject enemy;
 
@@ -18,12 +19,14 @@ public class God : MonoBehaviour {
 	void Start () {
 		player = GameObject.Find("Player");
 		enemy = GameObject.Find("Enemy");
+		initialDistance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
 
 		virtualEnemy = new VirtualEnemy ();
 		walkToFight = false;
 		endGame = false;
 		progress = new PlayerProgress();
 		userPoints = progress.getPoints ();
+		walkToInitialPosition = false;
 	}
 	
 	// Update is called once per frame
@@ -40,6 +43,23 @@ public class God : MonoBehaviour {
 			else {
 				player.GetComponent<Animator>().SetTrigger("Attack");
 				enemy.GetComponent<Animator>().SetTrigger("Attack");
+
+				walkToFight = false;
+				walkToInitialPosition = true;
+
+			}
+		}
+		else if (walkToInitialPosition) {
+			player.GetComponent<Animator>().ResetTrigger("Attack");
+			enemy.GetComponent<Animator>().ResetTrigger("Attack");
+			float distance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
+			if (distance < initialDistance) {
+				player.transform.position -= new Vector3(0.03f,0,0);
+				enemy.transform.position += new Vector3(0.03f,0,0);
+			}
+			else {
+				player.GetComponent<Animator>().ResetTrigger("Walk");
+				enemy.GetComponent<Animator>().ResetTrigger("Walk");
 			}
 		}
 	}
@@ -136,4 +156,5 @@ public class God : MonoBehaviour {
 
 		walkToFight = true;
 	}
+
 }
