@@ -23,8 +23,12 @@ public class God : MonoBehaviour {
 		if (walkToFight) {
 			float distance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
 			if (distance > 3) {
-				player.transform.position += new Vector3(0.01f,0,0);
-				enemy.transform.position -= new Vector3(0.01f,0,0);
+				player.transform.position += new Vector3(0.03f,0,0);
+				enemy.transform.position -= new Vector3(0.03f,0,0);
+			}
+			else {
+				player.GetComponent<Animator>().SetTrigger("Attack");
+				enemy.GetComponent<Animator>().SetTrigger("Attack");
 			}
 		}
 	}
