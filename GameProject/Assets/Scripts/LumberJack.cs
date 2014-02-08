@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LumberJack : MonoBehaviour {
 	public double myTimer = 10.0;
+	public GUISkin mySkin;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,16 +11,18 @@ public class LumberJack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(myTimer > 0){
-			myTimer -= Time.deltaTime;
-		}
-		if(myTimer <= 0){
-			Debug.Log("GAME OVER");
-		}
+
 	}
 
 	void OnGUI() {
-		GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 300, 300), ((int)myTimer).ToString());
+		GUI.skin = mySkin;
+		if (myTimer > 0) {
+			myTimer -= Time.deltaTime;
+			GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 300, 300), ((int)myTimer).ToString ());
+		}
+		if (myTimer <= 0) {
+			GUI.Label (new Rect (Screen.width / 2, Screen.height / 2, 300, 300), "Вы закончили рубуить лес!");
+		}
 	}
 
 	void chopWood() {
