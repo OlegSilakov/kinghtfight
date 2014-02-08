@@ -9,18 +9,23 @@ public class Gate : MonoBehaviour {
     public GameObject leftGate;
     public GameObject rigthGate;
 
-    public bool isOpen = false;
+    private bool isOpen = false;
+    private bool isOpened = false;
 
-    public void openPanel() {
+    public void openGate() {
         isOpen = true;
     }
 
-    public void closePanel() {
+    public void closeGate() {
         isOpen = false;
     }
 
-    public bool isOpenPanel() {
+    public bool isOpeningGate() {
         return isOpen;
+    }
+
+    public bool isOpenedGate() {
+        return isOpened;
     }
 
     private void moveLefth() {
@@ -32,8 +37,9 @@ public class Gate : MonoBehaviour {
         Vector3 pos = leftGate.transform.position;
         if (pos.x > left) {
             pos.x -= moveSpeed;
-            if (pos.x < left - 1) {
+            if (pos.x < left) {
                 pos.x = left;
+                isOpened = true;
             }
             leftGate.transform.position = pos;
         }
@@ -47,8 +53,9 @@ public class Gate : MonoBehaviour {
         Vector3 pos = rigthGate.transform.position;
         if (pos.x < rigth) {
             pos.x += moveSpeed;
-            if (pos.x > rigth + 1) {
+            if (pos.x > rigth) {
                 pos.x = rigth;
+                isOpened = true;
             }
             rigthGate.transform.position = pos;
         }
