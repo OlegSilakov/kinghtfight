@@ -15,10 +15,10 @@ public class GoodPlayerScript : MonoBehaviour {
 	
 	void OnMouseEnter () {
 		Debug.Log("xxx");
-		this.transform.FindChild("Good_head_pain").gameObject.SetActive(true);
+		this.transform.FindChild("Head_pain").gameObject.SetActive(true);
 	}
 	
 	void OnMouseExit () {
-		this.transform.FindChild("Good_head_pain").gameObject.SetActive(false);
+		this.transform.FindChild("Head_pain").gameObject.SetActive(false);
 	}
 }
