@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBodyPart : MonoBehaviour {
+public class PlayerBodyPartDefence : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
