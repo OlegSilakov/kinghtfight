@@ -5,9 +5,14 @@ public class God : MonoBehaviour {
 
 	private VirtualEnemy virtualEnemy;
 	private bool walkToFight;
+	private bool endGame;
 
 	private GameObject player;
 	private GameObject enemy;
+
+	private PlayerProgress progress;
+	private int enemyPoints = 200;
+	private int userPoints;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +21,16 @@ public class God : MonoBehaviour {
 
 		virtualEnemy = new VirtualEnemy ();
 		walkToFight = false;
+		endGame = false;
+		progress = new PlayerProgress();
+		userPoints = progress.getPoints ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (endGame) {
+			return;
+		}
 		if (walkToFight) {
 			float distance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
 			if (distance > 3) {
@@ -34,10 +45,66 @@ public class God : MonoBehaviour {
 	}
 
 	public void Fight() {
-		string enemyAttack = virtualEnemy.getAttackPartOfBody ();
-		string enemyDefence = virtualEnemy.getDefencePartOfBody ();
-		string playerAttack = this.getAttackPartOfBody ();
-		string playerDefence = this.getDefencePartOfBody ();
+				string enemyAttack = virtualEnemy.getAttackPartOfBody ();
+				string enemyDefence = virtualEnemy.getDefencePartOfBody ();
+				string playerAttack = this.getAttackPartOfBody ();
+				string playerDefence = this.getDefencePartOfBody ();
+
+
+
+				if (playerDefence == enemyAttack) {
+						Debug.Log ("User damage  = 0");
+				} else {
+						switch (enemyAttack) {
+						case "head":
+								userPoints -= 50;
+								break;
+						case "body":
+								userPoints -= 40;
+								break;
+						case "legs":
+								userPoints -= 30;
+								break;
+						case "hands":
+								userPoints -= 20;
+								break;
+						}
+				}
+
+				if (playerAttack == enemyDefence) {
+						Debug.Log ("Enemy damage = 0");
+				} else {
+						switch (playerAttack) {
+						case "head":
+								enemyPoints -= 50;
+								break;
+						case "body":
+								enemyPoints -= 40;
+								break;
+						case "legs":
+								enemyPoints -= 30;
+								break;
+						case "hands":
+								enemyPoints -= 20;
+								break;
+						}
+				}
+
+				if (userPoints <= 0) {
+						Debug.Log ("You lose");
+						progress.savePoints (0);
+						endGame = true;
+				} else {
+					progress.savePoints(userPoints);
+				}
+				
+				if (enemyPoints <= 0) {
+					Debug.Log("You win");
+					progress.savePoints(userPoints);
+					endGame = true;
+				}
+				
+
 
 		this.selectByEnemy (enemyAttack, enemyDefence);
 
@@ -63,7 +130,6 @@ public class God : MonoBehaviour {
 	}
 
 	private void startFightAnimation(){
-
 
 		player.GetComponent<Animator>().SetTrigger("Walk");
 		enemy.GetComponent<Animator>().SetTrigger("Walk");
