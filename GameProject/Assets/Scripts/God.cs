@@ -29,6 +29,9 @@ public class God : MonoBehaviour {
 			else {
 				player.GetComponent<Animator>().SetTrigger("Attack");
 				enemy.GetComponent<Animator>().SetTrigger("Attack");
+
+				player.GetComponent<Animator>().ResetTrigger("Walk");
+				enemy.GetComponent<Animator>().ResetTrigger("Walk");
 			}
 		}
 	}
