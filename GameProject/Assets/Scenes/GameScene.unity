@@ -356,7 +356,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 47a82cad23a3241318d426d0008ffb67, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .252535403, g: 1, b: .191176474, a: 1}
 --- !u!4 &456158241
 Transform:
   m_ObjectHideFlags: 0
@@ -763,7 +763,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 47a82cad23a3241318d426d0008ffb67, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .201340839, g: .977941155, b: .270967066, a: 1}
 --- !u!1 &857094300
 GameObject:
   m_ObjectHideFlags: 0
