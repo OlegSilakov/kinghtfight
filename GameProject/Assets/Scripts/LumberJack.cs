@@ -27,10 +27,10 @@ public class LumberJack : MonoBehaviour {
 		if (myTimer <= 0) {
 			GUI.Label (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 150, 300, 300), "You finished chop-chop!");
 
-			if (GUI.Button(new Rect (Screen.width / 2 - 200, Screen.height / 2, 100, 100), reload)) {
+			if (GUI.Button(new Rect (Screen.width / 2 - 125, Screen.height / 2 + 40, 100, 100), reload)) {
 				workTimer = myTimer;
 			}
-			if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 100, 100), cancel)) {
+			if (GUI.Button(new Rect(Screen.width / 2 + 25, Screen.height / 2 + 40, 100, 100), cancel)) {
 			
 			}
 		}
