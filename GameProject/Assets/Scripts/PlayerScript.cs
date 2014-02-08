@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -14,10 +14,10 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void OnMouseEnter () {
-		Debug.Log("Enter");
+		this.transform.FindChild("Head_pain").gameObject.SetActive(true);
 	}
 
 	void OnMouseExit () {
-		Debug.Log("Exit");
+		this.transform.FindChild("Head_pain").gameObject.SetActive(false);
 	}
 }
