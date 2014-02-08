@@ -1409,6 +1409,7 @@ MonoBehaviour:
   endPos: 15.3999996
   dY: .00999999978
   timeDy: 1
+  birdSound: {fileID: 0}
 --- !u!111 &1068524513
 Animation:
   m_ObjectHideFlags: 0
@@ -1549,6 +1550,7 @@ MonoBehaviour:
   endPos: 15.3999996
   dY: .0199999996
   timeDy: 1
+  birdSound: {fileID: 0}
 --- !u!111 &1096008070
 Animation:
   m_ObjectHideFlags: 0
@@ -1749,6 +1751,7 @@ MonoBehaviour:
   endPos: 15.3999996
   dY: .0199999996
   timeDy: 1
+  birdSound: {fileID: 8300000, guid: 332434e3d6641f140958d5e1f5ace808, type: 3}
 --- !u!111 &1323897397
 Animation:
   m_ObjectHideFlags: 0
@@ -1899,6 +1902,7 @@ MonoBehaviour:
   endPos: -15.3999996
   dY: -.0199999996
   timeDy: 1
+  birdSound: {fileID: 0}
 --- !u!111 &1365576643
 Animation:
   m_ObjectHideFlags: 0
@@ -2053,6 +2057,7 @@ MonoBehaviour:
   endPos: -15.3999996
   dY: -.00499999989
   timeDy: 1
+  birdSound: {fileID: 0}
 --- !u!1 &1437222240
 GameObject:
   m_ObjectHideFlags: 0

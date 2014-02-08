@@ -8,16 +8,20 @@ public class FlyBird : MonoBehaviour {
     public float endPos;
     public float dY = .01f;
     public float timeDy = 1;
+	public AudioClip birdSound;
 
     private Vector3 startPos;
     private GameObject bird;
     private float time;
+
 
     // Use this for initialization
     void Start() {
         bird = this.gameObject;
         startPos = bird.transform.position;
         time = timeDy;
+		SoundPlayer player = SoundPlayer.getInstance ();
+		player.play (birdSound);
     }
 
     // Update is called once per frame
