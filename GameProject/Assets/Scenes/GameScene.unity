@@ -429,6 +429,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 660120966}
   - 212: {fileID: 660120965}
+  - 58: {fileID: 660120968}
+  - 114: {fileID: 660120967}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -470,6 +472,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1845013967}
+--- !u!114 &660120967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660120964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa48a0623abd4229bfbe6df6905c169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &660120968
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 660120964}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: 1.53999996
+  m_Center: {x: 0, y: -5.96046448e-08}
 --- !u!1 &759483509
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +503,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 759483510}
   - 212: {fileID: 759483511}
+  - 61: {fileID: 759483513}
+  - 114: {fileID: 759483512}
   m_Layer: 0
   m_Name: Legs
   m_TagString: Untagged
@@ -520,6 +546,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300010, guid: e659d3edb50c7b84d9194bc04d4a5021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &759483512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759483509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa48a0623abd4229bfbe6df6905c169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &759483513
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759483509}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.94000006, y: .300000012}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &857094300
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +577,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 857094301}
   - 212: {fileID: 857094302}
+  - 61: {fileID: 857094304}
+  - 114: {fileID: 857094303}
   m_Layer: 0
   m_Name: Hand_right
   m_TagString: Untagged
@@ -570,6 +620,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300006, guid: e659d3edb50c7b84d9194bc04d4a5021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &857094303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857094300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa48a0623abd4229bfbe6df6905c169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &857094304
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 857094300}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .589999974, y: 1.22000003}
+  m_Center: {x: 0, y: -2.38418579e-07}
 --- !u!1 &1041100333
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +757,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1291991923}
   - 212: {fileID: 1291991924}
+  - 61: {fileID: 1291991926}
+  - 114: {fileID: 1291991925}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -726,6 +800,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300004, guid: e659d3edb50c7b84d9194bc04d4a5021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1291991925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1291991922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa48a0623abd4229bfbe6df6905c169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1291991926
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1291991922}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.61000001, y: 1.25999999}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1330788572
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +831,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1330788573}
   - 212: {fileID: 1330788574}
+  - 61: {fileID: 1330788576}
+  - 114: {fileID: 1330788575}
   m_Layer: 0
   m_Name: Hand_left
   m_TagString: Untagged
@@ -776,6 +874,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300008, guid: e659d3edb50c7b84d9194bc04d4a5021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &1330788575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330788572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa48a0623abd4229bfbe6df6905c169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1330788576
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330788572}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .550000012, y: 1.27999997}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1391337504
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +1006,7 @@ GameObject:
   - 4: {fileID: 1845013967}
   - 61: {fileID: 1845013968}
   - 114: {fileID: 1845013969}
+  - 114: {fileID: 1845013970}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -930,5 +1051,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ceb915e377ef402cbfd17adfa04a09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1845013970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845013966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0818ac050bf5445889cbe8de3e6b24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
