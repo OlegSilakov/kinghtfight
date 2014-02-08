@@ -3,10 +3,11 @@ using System.Collections;
 
 public class LumberJack : MonoBehaviour {
 	public double myTimer = 10.0;
-	public double workTimer;
 	public GUISkin mySkin;
 	public Texture reload;
 	public Texture cancel;
+
+	double workTimer;
 
 	// Use this for initialization
 	void Start () {
