@@ -4,15 +4,29 @@ using System.Collections;
 public class God : MonoBehaviour {
 
 	private VirtualEnemy virtualEnemy;
+	private bool walkToFight;
+
+	private GameObject player;
+	private GameObject enemy;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find("Player");
+		enemy = GameObject.Find("Enemy");
+
 		virtualEnemy = new VirtualEnemy ();
+		walkToFight = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (walkToFight) {
+			float distance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
+			if (distance > 3) {
+				player.transform.position += new Vector3(0.01f,0,0);
+				enemy.transform.position -= new Vector3(0.01f,0,0);
+			}
+		}
 	}
 
 	public void Fight() {
@@ -33,11 +47,11 @@ public class God : MonoBehaviour {
 	}
 
 	private void startFightAnimation(){
-		GameObject player = GameObject.Find("Player");
-		GameObject enemy = GameObject.Find("Enemy");
+
 
 		player.GetComponent<Animator>().SetTrigger("Walk");
 		enemy.GetComponent<Animator>().SetTrigger("Walk");
 
+		walkToFight = true;
 	}
 }
