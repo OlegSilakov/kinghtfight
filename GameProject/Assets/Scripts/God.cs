@@ -39,47 +39,27 @@ public class God : MonoBehaviour {
 		string playerAttack = this.getAttackPartOfBody ();
 		string playerDefence = this.getDefencePartOfBody ();
 
+		this.selectByEnemy (enemyAttack, enemyDefence);
+
 		this.startFightAnimation();
 	}
 
 	private string getAttackPartOfBody(){
-		string attackPartOfBody = "";
-
 		GameObject selected = player.GetComponent<Defence> ().selectedBodyPart;
-		if (selected.name == "Head") {
-			attackPartOfBody = "head";
-		}
-		else if (selected.name == "Body"){
-			attackPartOfBody = "body";
-		}
-		else if (selected.name == "Legs"){
-			attackPartOfBody = "legs";
-		}
-		else if ((selected.name == "Hand_left") || (selected.name == "Hand_right")) {
-			attackPartOfBody = "hands";
-		}
-
-		return attackPartOfBody;
+		return selected.name;
 	}
 	
 	private string getDefencePartOfBody(){
-		string attackPartOfBody = "";
-		
 		GameObject selected = enemy.GetComponent<Offence>().selectedBodyPart;
-		if (selected.name == "Head") {
-			attackPartOfBody = "head";
-		}
-		else if (selected.name == "Body"){
-			attackPartOfBody = "body";
-		}
-		else if (selected.name == "Legs"){
-			attackPartOfBody = "legs";
-		}
-		else if ((selected.name == "Hand_left") || (selected.name == "Hand_right")) {
-			attackPartOfBody = "hands";
-		}
-		
-		return attackPartOfBody;
+		return selected.name;
+	}
+
+	private void selectByEnemy(string attack, string defence) {
+		GameObject selected = player.transform.FindChild(attack).gameObject;
+		player.GetComponent<Offence> ().selectedBodyPart = selected;
+
+		selected = enemy.transform.FindChild (defence).gameObject;
+		enemy.GetComponent<Defence> ().selectedBodyPart = selected;
 	}
 
 	private void startFightAnimation(){
