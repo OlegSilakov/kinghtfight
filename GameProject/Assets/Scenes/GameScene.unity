@@ -850,6 +850,7 @@ GameObject:
   - 114: {fileID: 1041100336}
   - 114: {fileID: 1041100337}
   - 95: {fileID: 1041100338}
+  - 114: {fileID: 1041100339}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -922,6 +923,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1041100339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041100333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bc5e4a15cff40058fb8a266ababfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 80
 --- !u!1 &1072360554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,6 +1241,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1437222241}
+  - 114: {fileID: 1437222242}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -1248,6 +1262,19 @@ Transform:
   - {fileID: 456158241}
   - {fileID: 1609379975}
   m_Father: {fileID: 1041100334}
+--- !u!114 &1437222242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1437222240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8030d2ffb73984d2c962fdb407ec8f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeObjectContainer: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1483726288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1407,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1740753571}
+  - 114: {fileID: 1740753572}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -1400,6 +1428,19 @@ Transform:
   - {fileID: 785951085}
   - {fileID: 1193672689}
   m_Father: {fileID: 1845013967}
+--- !u!114 &1740753572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1740753570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8030d2ffb73984d2c962fdb407ec8f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeObjectContainer: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1845013966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1453,7 @@ GameObject:
   - 114: {fileID: 1845013969}
   - 114: {fileID: 1845013970}
   - 95: {fileID: 1845013971}
+  - 114: {fileID: 1845013972}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1484,3 +1526,15 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &1845013972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845013966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bc5e4a15cff40058fb8a266ababfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40

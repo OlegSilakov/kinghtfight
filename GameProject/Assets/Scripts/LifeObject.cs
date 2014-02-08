@@ -7,7 +7,7 @@ public class LifeObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.health = 100f;
+
 	}
 	
 	// Update is called once per frame
