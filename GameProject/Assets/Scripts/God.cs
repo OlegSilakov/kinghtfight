@@ -60,6 +60,7 @@ public class God : MonoBehaviour {
 			else {
 				player.GetComponent<Animator>().ResetTrigger("Walk");
 				enemy.GetComponent<Animator>().ResetTrigger("Walk");
+				walkToInitialPosition = false;
 			}
 		}
 	}
