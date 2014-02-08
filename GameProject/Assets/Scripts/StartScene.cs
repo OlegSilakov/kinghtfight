@@ -18,6 +18,10 @@ public class StartScene : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (sprites == null)
+            return;
+        if (sprites.Length < 1)
+            return;
         if (myTimer > 0) {
             myTimer -= Time.deltaTime;
             var render = number.GetComponent("SpriteRenderer") as SpriteRenderer;
