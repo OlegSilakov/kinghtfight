@@ -32,7 +32,7 @@ public class LumberJack : MonoBehaviour {
 				workTimer = myTimer;
 			}
 			if (GUI.Button(new Rect(Screen.width / 2 + 25, Screen.height / 2 + 40, 100, 100), cancel)) {
-			
+				Application.LoadLevel(0);
 			}
 		}
 	}
