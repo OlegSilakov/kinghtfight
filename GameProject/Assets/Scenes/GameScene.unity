@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 258438641}
   - 212: {fileID: 258438642}
+  - 61: {fileID: 258438643}
   m_Layer: 0
   m_Name: Legs
   m_TagString: Untagged
@@ -124,6 +125,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300008, guid: 5865eafa2b080624b8eee8d01f265474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &258438643
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 258438640}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.90999997, y: .430000007}
+  m_Center: {x: -2.38418579e-07, y: -2.38418579e-07}
 --- !u!1 &406933174
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +241,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413803874}
   - 212: {fileID: 413803875}
+  - 61: {fileID: 413803876}
   m_Layer: 0
   m_Name: Hand_right
   m_TagString: Untagged
@@ -270,6 +283,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300002, guid: 5865eafa2b080624b8eee8d01f265474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &413803876
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413803873}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .639999986, y: 1.17999995}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &490807941
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +303,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 490807942}
   - 212: {fileID: 490807943}
+  - 61: {fileID: 490807944}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -320,6 +345,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300010, guid: 5865eafa2b080624b8eee8d01f265474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &490807944
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 490807941}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.60000002, y: 1.08000004}
+  m_Center: {x: -2.38418579e-07, y: 0}
 --- !u!1 &540024137
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +415,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 550957470}
   - 212: {fileID: 550957471}
+  - 58: {fileID: 550957472}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -420,6 +457,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 5865eafa2b080624b8eee8d01f265474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &550957472
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550957469}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1.49000001
+  m_Center: {x: -.119999997, y: 0}
 --- !u!1 &660120964
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +539,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 660120964}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Radius: 1.53999996
   m_Center: {x: 0, y: -5.96046448e-08}
 --- !u!1 &759483509
@@ -565,7 +613,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 759483509}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.94000006, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!1 &857094300
@@ -639,7 +687,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 857094300}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .589999974, y: 1.22000003}
   m_Center: {x: 0, y: -2.38418579e-07}
 --- !u!1 &1041100333
@@ -819,7 +867,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1291991922}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.61000001, y: 1.25999999}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1330788572
@@ -893,7 +941,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1330788572}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .550000012, y: 1.27999997}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1391337504
@@ -955,6 +1003,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1483726289}
   - 212: {fileID: 1483726290}
+  - 61: {fileID: 1483726291}
   m_Layer: 0
   m_Name: Hand_left
   m_TagString: Untagged
@@ -996,6 +1045,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300006, guid: 5865eafa2b080624b8eee8d01f265474, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1483726291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483726288}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .569999993, y: 1.22000003}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1845013966
 GameObject:
   m_ObjectHideFlags: 0
