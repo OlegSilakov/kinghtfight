@@ -27,12 +27,10 @@ public class StartScene : MonoBehaviour {
             var render = number.GetComponent("SpriteRenderer") as SpriteRenderer;
             if (render != null) {
                 render.sprite = sprites[(int)(myTimer/interval)];
-                Debug.Log("index: " + ((int)(myTimer / interval)).ToString());
             }
         }
         if (myTimer <= 0) {
             number.SetActive(false);
-            Debug.Log("GAME OVER");
         }
     }
 }
