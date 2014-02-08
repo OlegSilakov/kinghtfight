@@ -1411,6 +1411,7 @@ GameObject:
   - 61: {fileID: 1845013968}
   - 114: {fileID: 1845013969}
   - 114: {fileID: 1845013970}
+  - 95: {fileID: 1845013971}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1469,3 +1470,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0818ac050bf5445889cbe8de3e6b24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1845013971
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845013966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b00ef567036c49b6a13bf074404c82d, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
