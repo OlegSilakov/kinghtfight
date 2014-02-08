@@ -5,6 +5,9 @@ public class LumberJack : MonoBehaviour {
 	public double myTimer = 10.0;
 	public double workTimer;
 	public GUISkin mySkin;
+	public Texture reload;
+	public Texture cancel;
+
 	// Use this for initialization
 	void Start () {
 		workTimer = myTimer;
@@ -24,10 +27,10 @@ public class LumberJack : MonoBehaviour {
 		if (myTimer <= 0) {
 			GUI.Label (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 150, 300, 300), "You finished chop-chop!");
 
-			if (GUI.Button(new Rect (Screen.width / 2 - 200, Screen.height / 2, 200, 100), "Заново")) {
+			if (GUI.Button(new Rect (Screen.width / 2 - 200, Screen.height / 2, 100, 100), reload)) {
 				workTimer = myTimer;
 			}
-			if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 200, 100), "Выйти")) {
+			if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 100, 100), cancel)) {
 			
 			}
 		}

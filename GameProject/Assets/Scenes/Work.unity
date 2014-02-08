@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTimer: 10
-  mySkin: {fileID: 0}
+  workTimer: 0
+  mySkin: {fileID: 11400000, guid: 293d215f2f7daa54885828863da50e21, type: 2}
+  reload: {fileID: 2800000, guid: c09226a020f1b4b6d876e41875d19a75, type: 3}
 --- !u!1 &1510494060
 GameObject:
   m_ObjectHideFlags: 0

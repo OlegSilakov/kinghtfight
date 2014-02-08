@@ -1,15 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LumberJack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LumberJack.cs">
     <Files>
-      <File FileName="Assets\Scripts\LumberJack.cs" Line="10" Column="2" />
+      <File FileName="Assets/Scripts/LumberJack.cs" Line="7" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> Создал скин
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
