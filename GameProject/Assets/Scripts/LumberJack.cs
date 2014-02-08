@@ -33,12 +33,12 @@ public class LumberJack : MonoBehaviour {
 			int playerPoints = progress.getPoints();
 			GUI.Label (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 150, 300, 300), "You finished chop-chop! You points: " + playerPoints.ToString());
 
-			if (GUI.Button(new Rect (Screen.width / 2 - 125, Screen.height / 2 + 40, 100, 100), reload)) {
+			if (GUI.Button(new Rect (Screen.width / 2 - 125, Screen.height / 2 + 70, 100, 100), reload)) {
 				workTimer = myTimer;
 				playerPoints += 10;
 				progress.savePoints(playerPoints);
 			}
-			if (GUI.Button(new Rect(Screen.width / 2 + 25, Screen.height / 2 + 40, 100, 100), cancel)) {
+			if (GUI.Button(new Rect(Screen.width / 2 + 25, Screen.height / 2 + 70, 100, 100), cancel)) {
 				playerPoints += 10;
 				progress.savePoints(playerPoints);
 				Application.LoadLevel(0);
