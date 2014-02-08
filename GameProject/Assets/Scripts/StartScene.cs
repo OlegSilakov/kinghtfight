@@ -6,6 +6,7 @@ public class StartScene : MonoBehaviour {
     public Sprite[] sprites;
     private GameObject number;
     private double interval;
+    private double step = .02d;
 
     double myTimer = 2.5;
     // Use this for initialization
@@ -23,13 +24,15 @@ public class StartScene : MonoBehaviour {
         if (sprites.Length < 1)
             return;
         if (myTimer > 0) {
-            myTimer -= Time.deltaTime;
+            Time.timeScale = 0;
+            myTimer -= step;
             var render = number.GetComponent("SpriteRenderer") as SpriteRenderer;
             if (render != null) {
                 render.sprite = sprites[(int)(myTimer/interval)];
             }
         }
         if (myTimer <= 0) {
+            Time.timeScale = 1;
             number.SetActive(false);
         }
     }
