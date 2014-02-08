@@ -12,6 +12,7 @@ public class StartScene : MonoBehaviour {
     // Use this for initialization
     void Start() {
         number = new GameObject();
+        number.transform.position = new Vector3(0.0f, 0.0f, -5.0f);
         var render = number.AddComponent("SpriteRenderer") as SpriteRenderer;
         interval = myTimer / sprites.Length;
 
