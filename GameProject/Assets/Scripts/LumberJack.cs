@@ -17,12 +17,12 @@ public class LumberJack : MonoBehaviour {
 
 	void OnGUI() {
 		GUI.skin = mySkin;
-		if (workTimer > 0) {
-			workTimer -= Time.deltaTime;
-			GUI.Label(new Rect (Screen.width / 2, Screen.height / 2 - 50, 300, 300), ((int)workTimer).ToString ());
+		if (myTimer > 0) {
+			myTimer -= Time.deltaTime;
+			GUI.Label (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 150, 300, 300), ((int)myTimer).ToString ());
 		}
-		if (workTimer <= 0) {
-			GUI.Label(new Rect (Screen.width / 2 - 100, Screen.height / 2 - 50, 300, 300), "Вы закончили рубить лес!");
+		if (myTimer <= 0) {
+			GUI.Label (new Rect (Screen.width / 2 - 150, Screen.height / 2 - 150, 300, 300), "You finished chop-chop!");
 
 			if (GUI.Button(new Rect (Screen.width / 2 - 200, Screen.height / 2, 200, 100), "Заново")) {
 				workTimer = myTimer;
