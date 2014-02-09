@@ -40,11 +40,16 @@ public class SoundPlayer {
             return;
         }
         AudioSource.PlayClipAtPoint(sound, Vector2.zero);
+        
     }
 
     public void play(AudioClip _sound) {
         sound = _sound;
         play();
     }
+
+    public void volume(float vol) {
+        AudioListener.volume = vol;
+    } 
 
 }
