@@ -37,15 +37,15 @@ public class MainMenuScript : MonoBehaviour {
         if (gate.isOpeningGate())
             return;
 		GUI.skin = mySkin;
-		if (GUI.Button(new Rect(Screen.width / 2 - 230, Screen.height / 2 - 40, 140, 80), fightButton)) {
+		if (GUI.Button(new Rect(0 + Screen.width / 17, Screen.height / 2 - 40, Screen.width / 3.5f, Screen.height / 3.5f), fightButton)) {
             gate.openGate();
             isFightButton = true;
 		}
-		if (GUI.Button(new Rect(Screen.width / 2 - 70, Screen.height / 2 - 40, 140, 80), chopButton)) {
+		if (GUI.Button(new Rect(Screen.width / 2 - Screen.width / 7, Screen.height / 2 - 40, Screen.width / 3.5f, Screen.height / 3.5f), chopButton)) {
             gate.openGate();
             isChopButton = true;
         }
-		if (GUI.Button(new Rect(Screen.width / 2 + 90, Screen.height / 2 - 40, 140, 80), exitButton)) {
+		if (GUI.Button(new Rect(Screen.width - Screen.width / 3, Screen.height / 2 - 40, Screen.width / 3.5f, Screen.height / 3.5f), exitButton)) {
             gate.openGate();
             isExitButton = true;
         }
