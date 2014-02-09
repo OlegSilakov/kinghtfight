@@ -40,8 +40,8 @@ public class RedButtonScript : MonoBehaviour {
 		}
 		GUI.skin = mySkin;
 		if (defence.selectedBodyPart && offence.selectedBodyPart) {
-
-			if (GUI.Button(new Rect (Screen.width / 2 - 40, Screen.height / 2 - 40, 80, 80), redButton)) {
+			float width = Screen.width / 5;
+			if (GUI.Button(new Rect (Screen.width / 2 - width/2, Screen.height / 2 - width/2, width, width), redButton)) {
 				fightButtonEnabled = false;
 				GameObject.Find("God").GetComponent<God>().Fight();
 			}
