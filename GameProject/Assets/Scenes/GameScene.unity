@@ -2782,6 +2782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac2d20eec39c4187a35d68e752d6504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fightSound: {fileID: 0}
 --- !u!4 &1890326020
 Transform:
   m_ObjectHideFlags: 0
