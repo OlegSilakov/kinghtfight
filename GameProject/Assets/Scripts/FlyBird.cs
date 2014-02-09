@@ -8,7 +8,8 @@ public class FlyBird : MonoBehaviour {
     public float endPos;
     public float dY = .01f;
     public float timeDy = 1;
-	public AudioClip birdSound;
+    public AudioClip birdSound;
+    public AudioClip bahSound;
 
     private Vector3 startPos;
     private GameObject bird;
@@ -58,7 +59,8 @@ public class FlyBird : MonoBehaviour {
     void OnMouseUpAsButton() {
         dY = -.2f;
         bird.transform.localRotation = new Quaternion(0, 0, -1.0f, 1.0f);
-
+        SoundPlayer player = SoundPlayer.getInstance();
+        player.play(bahSound);
         isDead = true;
     }
 }
