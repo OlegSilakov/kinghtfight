@@ -13,6 +13,7 @@ public class FlyBird : MonoBehaviour {
     private Vector3 startPos;
     private GameObject bird;
     private float time;
+    private bool isDead = false;
 
 
     // Use this for initialization
@@ -20,8 +21,10 @@ public class FlyBird : MonoBehaviour {
         bird = this.gameObject;
         startPos = bird.transform.position;
         time = timeDy;
-		SoundPlayer player = SoundPlayer.getInstance ();
-		player.play (birdSound);
+        SoundPlayer player = SoundPlayer.getInstance();
+        player.play(birdSound);
+        bird.transform.localScale = scale;
+
     }
 
     // Update is called once per frame
@@ -32,15 +35,30 @@ public class FlyBird : MonoBehaviour {
         if ((pos.x / endPos) > 1) {
             pos = startPos;
         }
-        pos.x += speed;
         pos.y += dY;
+        
         if (time > 0) {
             time -= Time.deltaTime;
         } else {
             time = timeDy;
+            if (isDead) {
+                timeDy = 0;
+                time = 0;
+                bird.transform.position = pos;
+                var angle = bird.transform.localRotation;// = new Quaternion(0, 0, -90, -90);
+                Debug.Log(angle);
+                return;
+            }
             dY *= -1;
         }
+        pos.x += speed;
         bird.transform.position = pos;
-        bird.transform.localScale = scale;
+    }
+
+    void OnMouseUpAsButton() {
+        dY = -.2f;
+        bird.transform.localRotation = new Quaternion(0, 0, -1.0f, 1.0f);
+
+        isDead = true;
     }
 }
