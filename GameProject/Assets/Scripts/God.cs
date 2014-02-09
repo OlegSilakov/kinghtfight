@@ -19,7 +19,12 @@ public class God : MonoBehaviour {
 	private int enemyPoints = 200;
 	private int userPoints;
 
-	// Use this for initialization
+	string enemyAttack;
+	string enemyDefence;
+	string playerAttack;
+	string playerDefence;
+		
+		// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
 		enemy = GameObject.Find("Enemy");
@@ -29,7 +34,8 @@ public class God : MonoBehaviour {
 		walkToFight = false;
 		endGame = false;
 		progress = new PlayerProgress();
-		userPoints = progress.getPoints ();
+		//userPoints = progress.getPoints ();
+		userPoints = 200;
 		walkToInitialPosition = false;
 		setPlayerHealth (userPoints);
 		setEnemyHealth (enemyPoints);
@@ -55,7 +61,7 @@ public class God : MonoBehaviour {
 					playSound = false;
 				}
 				bang.GetComponent<Animator>().SetTrigger("BangTrigger");
-
+				healthReduce(enemyAttack, enemyDefence, playerAttack, playerDefence);
 				walkToFight = false;
 				walkToInitialPosition = true;
 			}
@@ -79,8 +85,57 @@ public class God : MonoBehaviour {
 		}
 	}
 
-    private void ResetSelect() {
-        var defence = player.GetComponent<Defence>();
+	private void healthReduce(string enemyAttackParam, string enemyDefenceParam, string playerAttackParam, string playerDefenceParam) {
+		if (playerDefenceParam.Equals(enemyAttackParam)) {
+			Debug.Log ("User damage  = 0");
+		} else {
+			if (enemyAttackParam.Equals("Head")) { userPoints -= 50; }
+			if (enemyAttackParam.Equals("Body")) { userPoints -= 40; }
+			if (enemyAttackParam.Equals("Legs")) { userPoints -= 30; }
+			if (enemyAttackParam.Equals("Hand_left")) { userPoints -= 20; }
+			if (enemyAttackParam.Equals("Hand_right")) { userPoints -= 20; }
+			
+		}
+		
+		if (playerAttackParam.Equals(enemyDefenceParam)) {
+			Debug.Log ("Enemy damage = 0");
+		} else {
+			if (playerAttackParam.Equals("Head")) { enemyPoints -= 50; }
+			if (playerAttackParam.Equals("Body")) { enemyPoints -= 40; }
+			if (playerAttackParam.Equals("Legs")) { enemyPoints -= 30; }
+			if (playerAttackParam.Equals("Hand_right")) { enemyPoints -= 20; }
+			if (playerAttackParam.Equals("Hand_left")) { enemyPoints -= 20; }				
+		}
+		
+		
+		if (userPoints <= 0) {
+			Debug.Log ("You lose");
+			progress.savePoints (0);
+			endGame = true;
+			playerDeath();
+		} else {
+			progress.savePoints(userPoints);
+		}
+		
+		if (enemyPoints <= 0) {
+			Debug.Log("You win");
+			progress.savePoints(userPoints);
+			endGame = true;
+			enemyDeath();
+		}
+		setPlayerHealth (userPoints);
+		setEnemyHealth (enemyPoints);
+
+	}
+
+	public void playerDeath() {
+	}
+
+	public void enemyDeath() {
+	}
+	
+	private void ResetSelect() {
+		var defence = player.GetComponent<Defence>();
         var offence = enemy.GetComponent<Offence>();
         defence.selectedBodyPart = null;
         offence.selectedBodyPart = null;
@@ -91,69 +146,10 @@ public class God : MonoBehaviour {
     }
 
 	public void Fight() {
-				string enemyAttack = virtualEnemy.getAttackPartOfBody ();
-				string enemyDefence = virtualEnemy.getDefencePartOfBody ();
-				string playerAttack = this.getAttackPartOfBody ();
-				string playerDefence = this.getDefencePartOfBody ();
-
-
-
-				if (playerDefence == enemyAttack) {
-						Debug.Log ("User damage  = 0");
-				} else {
-						switch (enemyAttack) {
-						case "head":
-								userPoints -= 50;
-								break;
-						case "body":
-								userPoints -= 40;
-								break;
-						case "legs":
-								userPoints -= 30;
-								break;
-						case "hands":
-								userPoints -= 20;
-								break;
-						}
-				}
-
-				if (playerAttack == enemyDefence) {
-						Debug.Log ("Enemy damage = 0");
-				} else {
-						switch (playerAttack) {
-						case "head":
-								enemyPoints -= 50;
-								break;
-						case "body":
-								enemyPoints -= 40;
-								break;
-						case "legs":
-								enemyPoints -= 30;
-								break;
-						case "hands":
-								enemyPoints -= 20;
-								break;
-						}
-				}
-
-				
-
-				if (userPoints <= 0) {
-						Debug.Log ("You lose");
-						progress.savePoints (0);
-						endGame = true;
-				} else {
-					progress.savePoints(userPoints);
-				}
-				
-				if (enemyPoints <= 0) {
-					Debug.Log("You win");
-					progress.savePoints(userPoints);
-					endGame = true;
-				}
-				setPlayerHealth (userPoints);
-				setEnemyHealth (enemyPoints);
-
+				enemyAttack = virtualEnemy.getAttackPartOfBody ();
+				enemyDefence = virtualEnemy.getDefencePartOfBody ();
+				playerAttack = this.getAttackPartOfBody ();
+				playerDefence = this.getDefencePartOfBody ();
 
 		this.selectByEnemy (enemyAttack, enemyDefence);
 
@@ -163,11 +159,13 @@ public class God : MonoBehaviour {
 	void setPlayerHealth(int points) {
 		LifeObject lf = player.GetComponent<LifeObject> ();
 		lf.health = (float)points;
+		Debug.Log ("Player: " + lf.health);
 	}
 
 	void setEnemyHealth(int points) {
 		LifeObject lf = enemy.GetComponent<LifeObject> ();
 		lf.health = (float)points;
+		Debug.Log ("Enemy: " + lf.health);
 	}
 
 	private string getAttackPartOfBody(){
