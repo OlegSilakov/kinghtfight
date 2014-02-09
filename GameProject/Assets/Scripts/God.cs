@@ -19,6 +19,9 @@ public class God : MonoBehaviour {
 	private int enemyPoints = 200;
 	private int userPoints;
 
+	bool isPlayerDeath = false;
+	bool isEnemyDeath = false;
+
 	string enemyAttack;
 	string enemyDefence;
 	string playerAttack;
@@ -71,6 +74,7 @@ public class God : MonoBehaviour {
 			player.GetComponent<Animator>().ResetTrigger("Attack");
 			enemy.GetComponent<Animator>().ResetTrigger("Attack");
 			bang.GetComponent<Animator>().ResetTrigger("BangTrigger");
+
 			float distance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
 			if (distance < initialDistance) {
 				player.transform.position -= new Vector3(0.03f,0,0);
@@ -82,6 +86,13 @@ public class God : MonoBehaviour {
 				enemy.GetComponent<Animator>().ResetTrigger("Walk");
                 walkToInitialPosition = false;
             }
+
+			if (isPlayerDeath || isEnemyDeath) {
+				endGame = true;
+				player.GetComponent<Animator>().ResetTrigger("Walk");
+				enemy.GetComponent<Animator>().ResetTrigger("Walk");
+				walkToInitialPosition = false;
+			}
 		}
 	}
 
@@ -111,8 +122,9 @@ public class God : MonoBehaviour {
 		if (userPoints <= 0) {
 			Debug.Log ("You lose");
 			progress.savePoints (0);
-			endGame = true;
+//			endGame = true;
 			playerDeath();
+			isPlayerDeath = true;
 		} else {
 			progress.savePoints(userPoints);
 		}
@@ -120,8 +132,9 @@ public class God : MonoBehaviour {
 		if (enemyPoints <= 0) {
 			Debug.Log("You win");
 			progress.savePoints(userPoints);
-			endGame = true;
+//			endGame = true;
 			enemyDeath();
+			isEnemyDeath = true;
 		}
 		setPlayerHealth (userPoints);
 		setEnemyHealth (enemyPoints);
@@ -129,9 +142,11 @@ public class God : MonoBehaviour {
 	}
 
 	public void playerDeath() {
+
 	}
 
 	public void enemyDeath() {
+
 	}
 	
 	private void ResetSelect() {

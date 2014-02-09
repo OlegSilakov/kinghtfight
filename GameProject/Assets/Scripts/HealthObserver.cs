@@ -26,6 +26,7 @@ public class HealthObserver : MonoBehaviour {
 //		this.transform.position = lifeObjectContainer.transform.position + offset;
 
 		float percentOfHealth = lifeObject.health / 200f;
+		percentOfHealth = (percentOfHealth < 0) ? 0 : percentOfHealth;
 
 		if (healthLine) {
 			healthLine.localScale = new Vector3(percentOfHealth * originScale.x, originScale.y, originScale.z);
