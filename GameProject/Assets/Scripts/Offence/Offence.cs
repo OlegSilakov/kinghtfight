@@ -15,8 +15,15 @@ public class Offence : MonoBehaviour {
 
 			if (this._selectedBodyPart) {
 				SpriteRenderer render = this._selectedBodyPart.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
-				if (render != null)
-					render.color = Color.red;
+				if (render != null){
+					if (render.color == Color.white)
+					{
+						render.color = Color.red;
+					}
+					else {
+						render.color = Color.blue;
+					}
+				}
 			}
 
 		}

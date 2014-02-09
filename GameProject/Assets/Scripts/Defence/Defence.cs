@@ -15,8 +15,15 @@ public class Defence : MonoBehaviour {
 
 			if (this._selectedBodyPart) {
 				SpriteRenderer render = this._selectedBodyPart.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
-				if (render != null)
-					render.color = Color.green;
+				if (render != null) {
+					if (render.color == Color.white)
+					{
+						render.color = Color.green;
+					}
+					else {
+						render.color = Color.blue;
+					}
+				}
 			}
 		}
 		get {
