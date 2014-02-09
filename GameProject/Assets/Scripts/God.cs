@@ -3,6 +3,7 @@ using System.Collections;
 
 public class God : MonoBehaviour {
 	public AudioClip fightSound;
+	public AudioClip deathSong;
 
 	private VirtualEnemy virtualEnemy;
 	private bool walkToFight;
@@ -58,11 +59,11 @@ public class God : MonoBehaviour {
 			else {
 				player.GetComponent<Animator>().SetTrigger("Attack");
 				enemy.GetComponent<Animator>().SetTrigger("Attack");
-				if (playSound) {
+//				if (playSound) {
 					SoundPlayer soundPlayer = SoundPlayer.getInstance ();
 					soundPlayer.play (fightSound);
-					playSound = false;
-				}
+//					playSound = false;
+//				}
 				bang.GetComponent<Animator>().SetTrigger("BangTrigger");
 				healthReduce(enemyAttack, enemyDefence, playerAttack, playerDefence);
 				walkToFight = false;
@@ -147,6 +148,8 @@ public class God : MonoBehaviour {
 
 	public void enemyDeath() {
 		enemy.GetComponent<Animator>().SetTrigger("Death");
+		SoundPlayer player = SoundPlayer.getInstance ();
+		player.play (deathSong);
 	}
 	
 	private void ResetSelect() {
