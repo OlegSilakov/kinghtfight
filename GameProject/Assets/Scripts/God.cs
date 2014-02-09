@@ -142,11 +142,11 @@ public class God : MonoBehaviour {
 	}
 
 	public void playerDeath() {
-
+		player.GetComponent<Animator>().SetTrigger("Death");
 	}
 
 	public void enemyDeath() {
-
+		enemy.GetComponent<Animator>().SetTrigger("Death");
 	}
 	
 	private void ResetSelect() {
