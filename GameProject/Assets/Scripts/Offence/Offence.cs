@@ -8,12 +8,14 @@ public class Offence : MonoBehaviour {
 		set {
 			if (_selectedBodyPart) {
 				SpriteRenderer selectedRender = _selectedBodyPart.GetComponent("SpriteRenderer") as SpriteRenderer;
-				selectedRender.color = Color.white;
+                if (selectedRender != null)
+                    selectedRender.color = Color.white;
 			}
 			this._selectedBodyPart = value;
 			
 			SpriteRenderer render = this._selectedBodyPart.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
-			render.color = Color.red;
+            if (render != null)
+                render.color = Color.red;
 		}
 		get {
 			return this._selectedBodyPart;

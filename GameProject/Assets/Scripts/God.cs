@@ -56,14 +56,26 @@ public class God : MonoBehaviour {
 			if (distance < initialDistance) {
 				player.transform.position -= new Vector3(0.03f,0,0);
 				enemy.transform.position += new Vector3(0.03f,0,0);
+                ResetSelect();
 			}
 			else {
 				player.GetComponent<Animator>().ResetTrigger("Walk");
 				enemy.GetComponent<Animator>().ResetTrigger("Walk");
-				walkToInitialPosition = false;
-			}
+                walkToInitialPosition = false;
+            }
 		}
 	}
+
+    private void ResetSelect() {
+        var defence = player.GetComponent<Defence>();
+        var offence = enemy.GetComponent<Offence>();
+        defence.selectedBodyPart = new GameObject();
+        offence.selectedBodyPart = new GameObject();
+        defence = enemy.GetComponent<Defence>();
+        offence = player.GetComponent<Offence>();
+        defence.selectedBodyPart = new GameObject();
+        offence.selectedBodyPart = new GameObject();
+    }
 
 	public void Fight() {
 				string enemyAttack = virtualEnemy.getAttackPartOfBody ();
