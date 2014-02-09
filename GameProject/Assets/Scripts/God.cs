@@ -13,6 +13,7 @@ public class God : MonoBehaviour {
 	
 	private GameObject player;
 	private GameObject enemy;
+	private GameObject bang;
 
 	private PlayerProgress progress;
 	private int enemyPoints = 200;
@@ -22,8 +23,8 @@ public class God : MonoBehaviour {
 	void Start () {
 		player = GameObject.Find("Player");
 		enemy = GameObject.Find("Enemy");
+		bang = GameObject.Find("Bang");
 		initialDistance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
-
 		virtualEnemy = new VirtualEnemy ();
 		walkToFight = false;
 		endGame = false;
@@ -51,15 +52,17 @@ public class God : MonoBehaviour {
 					soundPlayer.play (fightSound);
 					playSound = false;
 				}
+				bang.GetComponent<Animator>().SetTrigger("BangTrigger");
 
 				walkToFight = false;
 				walkToInitialPosition = true;
-
 			}
 		}
 		else if (walkToInitialPosition) {
+
 			player.GetComponent<Animator>().ResetTrigger("Attack");
 			enemy.GetComponent<Animator>().ResetTrigger("Attack");
+			bang.GetComponent<Animator>().ResetTrigger("BangTrigger");
 			float distance = Mathf.Abs(player.transform.position.x - enemy.transform.position.x);
 			if (distance < initialDistance) {
 				player.transform.position -= new Vector3(0.03f,0,0);
