@@ -1451,6 +1451,7 @@ GameObject:
   - 95: {fileID: 1068524514}
   - 111: {fileID: 1068524513}
   - 114: {fileID: 1068524512}
+  - 65: {fileID: 1068524516}
   m_Layer: 0
   m_Name: smallBird
   m_TagString: Untagged
@@ -1517,6 +1518,18 @@ Transform:
   - {fileID: 598951934}
   - {fileID: 86556963}
   m_Father: {fileID: 0}
+--- !u!65 &1068524516
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1068524511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.86000001, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1072360554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1591,7 @@ GameObject:
   - 95: {fileID: 1096008071}
   - 111: {fileID: 1096008070}
   - 114: {fileID: 1096008069}
+  - 65: {fileID: 1096008072}
   m_Layer: 0
   m_Name: VeryBigBird
   m_TagString: Untagged
@@ -1644,6 +1658,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!65 &1096008072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096008067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.97000003, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1193672688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,6 +1805,7 @@ GameObject:
   - 95: {fileID: 1323897398}
   - 111: {fileID: 1323897397}
   - 114: {fileID: 1323897396}
+  - 65: {fileID: 1323897399}
   m_Layer: 0
   m_Name: BigBird
   m_TagString: Untagged
@@ -1845,6 +1872,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!65 &1323897399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323897394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.69000006, y: 1.21000004, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1330788572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1969,7 @@ GameObject:
   - 95: {fileID: 1365576644}
   - 111: {fileID: 1365576643}
   - 114: {fileID: 1365576642}
+  - 65: {fileID: 1365576645}
   m_Layer: 0
   m_Name: BackBigBird
   m_TagString: Untagged
@@ -1996,6 +2036,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!65 &1365576645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365576640}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.22000003, y: 1.25, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1391337504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2109,7 @@ GameObject:
   - 95: {fileID: 1427158051}
   - 111: {fileID: 1427158052}
   - 114: {fileID: 1427158053}
+  - 65: {fileID: 1427158054}
   m_Layer: 0
   m_Name: BackSmallBird
   m_TagString: Untagged
@@ -2123,6 +2176,18 @@ MonoBehaviour:
   dY: -.00499999989
   timeDy: 1
   birdSound: {fileID: 0}
+--- !u!65 &1427158054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1427158049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.08999991, y: 1.39999998, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1437222240
 GameObject:
   m_ObjectHideFlags: 0
