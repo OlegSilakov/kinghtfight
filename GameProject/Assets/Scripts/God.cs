@@ -31,6 +31,8 @@ public class God : MonoBehaviour {
 		progress = new PlayerProgress();
 		userPoints = progress.getPoints ();
 		walkToInitialPosition = false;
+		setPlayerHealth (userPoints);
+		setEnemyHealth (enemyPoints);
 	}
 	
 	// Update is called once per frame
@@ -134,6 +136,8 @@ public class God : MonoBehaviour {
 						}
 				}
 
+				
+
 				if (userPoints <= 0) {
 						Debug.Log ("You lose");
 						progress.savePoints (0);
@@ -147,12 +151,23 @@ public class God : MonoBehaviour {
 					progress.savePoints(userPoints);
 					endGame = true;
 				}
-				
+				setPlayerHealth (userPoints);
+				setEnemyHealth (enemyPoints);
 
 
 		this.selectByEnemy (enemyAttack, enemyDefence);
 
 		this.startFightAnimation();
+	}
+
+	void setPlayerHealth(int points) {
+		LifeObject lf = player.GetComponent<LifeObject> ();
+		lf.health = (float)points;
+	}
+
+	void setEnemyHealth(int points) {
+		LifeObject lf = enemy.GetComponent<LifeObject> ();
+		lf.health = (float)points;
 	}
 
 	private string getAttackPartOfBody(){
