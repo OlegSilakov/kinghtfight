@@ -80,12 +80,12 @@ public class God : MonoBehaviour {
     private void ResetSelect() {
         var defence = player.GetComponent<Defence>();
         var offence = enemy.GetComponent<Offence>();
-        defence.selectedBodyPart = new GameObject();
-        offence.selectedBodyPart = new GameObject();
+        defence.selectedBodyPart = null;
+        offence.selectedBodyPart = null;
         defence = enemy.GetComponent<Defence>();
         offence = player.GetComponent<Offence>();
-        defence.selectedBodyPart = new GameObject();
-        offence.selectedBodyPart = new GameObject();
+        defence.selectedBodyPart = null;
+        offence.selectedBodyPart = null;
     }
 
 	public void Fight() {

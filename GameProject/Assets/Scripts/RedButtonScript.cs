@@ -11,7 +11,8 @@ public class RedButtonScript : MonoBehaviour {
 	public Texture redButton;
 	public GUISkin mySkin;
 
-	private bool fightButtonEnabled = true;
+	private bool fightButtonEnabled;
+	private bool oldSelected = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,16 @@ public class RedButtonScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		bool newSelected = (defence.selectedBodyPart && offence.selectedBodyPart);
 
+		if (newSelected && !oldSelected) {
+			fightButtonEnabled = true;
+		}
+//		else if (!newSelected && oldSelected) {
+//			fightButtonEnabled = false;
+//		}
+
+		oldSelected = newSelected;
 	}
 
 	void OnGUI() {
@@ -30,6 +40,7 @@ public class RedButtonScript : MonoBehaviour {
 		}
 		GUI.skin = mySkin;
 		if (defence.selectedBodyPart && offence.selectedBodyPart) {
+
 			if (GUI.Button(new Rect (Screen.width / 2 - 40, Screen.height / 2 - 40, 80, 80), redButton)) {
 				fightButtonEnabled = false;
 				GameObject.Find("God").GetComponent<God>().Fight();

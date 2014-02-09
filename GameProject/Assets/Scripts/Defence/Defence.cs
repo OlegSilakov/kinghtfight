@@ -13,9 +13,11 @@ public class Defence : MonoBehaviour {
 			}
 			this._selectedBodyPart = value;
 
-			SpriteRenderer render = this._selectedBodyPart.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
-            if (render != null)
-                render.color = Color.green;
+			if (this._selectedBodyPart) {
+				SpriteRenderer render = this._selectedBodyPart.gameObject.GetComponent("SpriteRenderer") as SpriteRenderer;
+				if (render != null)
+					render.color = Color.green;
+			}
 		}
 		get {
 			return this._selectedBodyPart;
