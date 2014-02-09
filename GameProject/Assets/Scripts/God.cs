@@ -2,12 +2,15 @@
 using System.Collections;
 
 public class God : MonoBehaviour {
+	public AudioClip fightSound;
 
 	private VirtualEnemy virtualEnemy;
 	private bool walkToFight;
 	private bool endGame;
 	private bool walkToInitialPosition;
 	private float initialDistance;
+	private bool playSound = true;
+	
 	private GameObject player;
 	private GameObject enemy;
 
@@ -43,6 +46,11 @@ public class God : MonoBehaviour {
 			else {
 				player.GetComponent<Animator>().SetTrigger("Attack");
 				enemy.GetComponent<Animator>().SetTrigger("Attack");
+				if (playSound) {
+					SoundPlayer soundPlayer = SoundPlayer.getInstance ();
+					soundPlayer.play (fightSound);
+					playSound = false;
+				}
 
 				walkToFight = false;
 				walkToInitialPosition = true;
