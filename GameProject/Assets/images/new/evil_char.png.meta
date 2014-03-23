@@ -24,13 +24,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -44,6 +44,87 @@ TextureImporter:
     textureFormat: -2
     compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: evil_char_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 685
+        width: 391
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_1
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 497
+        width: 390
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 435
+        width: 114
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_3
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 249
+        width: 255
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_4
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 442
+        width: 135
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 318
+        width: 84
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_6
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 328
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 6
+        width: 205
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: evil_char_8
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 6
+        width: 205
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
